@@ -162,8 +162,8 @@ public class NodeAttributesManagerImpl extends NodeAttributesManager {
       StringBuilder logMsg = new StringBuilder(op.name());
       logMsg.append(" attributes on nodes:");
       // do update labels from nodes
-      for (Entry<String, Map<NodeAttribute, AttributeValue>> entry : nodeAttributeMapping
-          .entrySet()) {
+      for (Entry<String, Map<NodeAttribute, AttributeValue>> entry :
+          nodeAttributeMapping.entrySet()) {
         String nodeHost = entry.getKey();
         Map<NodeAttribute, AttributeValue> attributes = entry.getValue();
 
@@ -399,7 +399,8 @@ public class NodeAttributesManagerImpl extends NodeAttributesManager {
   }
 
   @Override
-  public Map<NodeAttributeKey, Map<String, AttributeValue>> getAttributesToNodes(
+  public Map<NodeAttributeKey,
+      Map<String, AttributeValue>> getAttributesToNodes(
       Set<NodeAttributeKey> attributes) {
     try {
       readLock.lock();

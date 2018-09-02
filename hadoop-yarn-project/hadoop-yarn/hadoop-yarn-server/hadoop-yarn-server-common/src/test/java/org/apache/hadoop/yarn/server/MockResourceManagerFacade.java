@@ -188,8 +188,8 @@ public class MockResourceManagerFacade implements ApplicationClientProtocol,
 
   private HashSet<ApplicationId> applicationMap = new HashSet<>();
   private HashSet<ApplicationId> keepContainerOnUams = new HashSet<>();
-  private HashMap<ApplicationAttemptId, List<ContainerId>> applicationContainerIdMap =
-      new HashMap<ApplicationAttemptId, List<ContainerId>>();
+  private HashMap<ApplicationAttemptId,
+      List<ContainerId>> applicationContainerIdMap = new HashMap<>();
   private AtomicInteger containerIndex = new AtomicInteger(0);
   private Configuration conf;
   private int subClusterId;
@@ -494,7 +494,7 @@ public class MockResourceManagerFacade implements ApplicationClientProtocol,
     if (request.getApplicationSubmissionContext().getUnmanagedAM()
         || request.getApplicationSubmissionContext()
             .getKeepContainersAcrossApplicationAttempts()) {
-	keepContainerOnUams.add(appId);
+      keepContainerOnUams.add(appId);
     }
     return SubmitApplicationResponse.newInstance();
   }
@@ -920,8 +920,9 @@ public class MockResourceManagerFacade implements ApplicationClientProtocol,
   }
 
   @Override
-  public NodesToAttributesMappingResponse mapAttributesToNodes(NodesToAttributesMappingRequest request)
-    throws YarnException, IOException {
+  public NodesToAttributesMappingResponse mapAttributesToNodes(
+      NodesToAttributesMappingRequest request)
+      throws YarnException, IOException {
     return null;
   }
 }
